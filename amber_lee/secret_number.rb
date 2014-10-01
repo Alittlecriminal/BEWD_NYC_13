@@ -50,31 +50,66 @@ end
   name = get_input
   puts hello ("Hi #{name}!")
   puts "Guess a number between 1 and 10, you have three tries to guess correctly."
-  secret_number = 8
+  #secret_number = rand(1..10) -- this is a way to set a random secret number
 
+secret_number = 8
 times_to_loop = 3
 tries = 0
+
 while tries < times_to_loop 
+  tries += 1
   
-  guess = get_input.to_i
+  guess = gets.strip.to_i
   if guess == secret_number
     puts "Congratulations You Guessed Correctly" 
+    exit  #this will stop the loop if you guess this
   elsif guess < secret_number
-    puts "Sorry, your guess is too low! You have #{times_to_loop - (tries + 1)} tries left!" 
+    puts "Sorry, your guess is too low! You have #{times_to_loop - tries} tries left!" 
   elsif guess > secret_number
-    puts "Sorry, your guess is too high! You have #{times_to_loop - (tries + 1)} tries left!" 
+    puts "Sorry, your guess is too high! You have #{times_to_loop - tries} tries left!" #you can add the guesses left after the the loop as a put and an if statement that asks if tries is greater than 1 display number of tries left
   end
 
   puts "Sorry that is not a valid guess" if guess > 10 || guess < 1
 
- 
-
-  tries += 1
 
 end
  puts "Sorry, game over, the secret number was #{secret_number}" if tries == times_to_loop
 
 #need to add Loop until 3 is true. 
+
+
+#this is the teachers answer
+#guesses = 3
+#tries = 0
+
+#while tries < guesses
+  #tries += 1
+  #tries_left = guesses - tries
+
+  #puts "Enter your guess:"
+  #guess = gets.strip.to_i
+
+  #if guess == secret_number
+    #puts "Hey, you won!"
+    #exit
+  #elsif guess < secret_number
+    #low_or_high = 'low'
+    #higher_or_lower = 'higher'
+  #elsif guess > secret_number
+    #low_or_high = 'high'
+    #higher_or_lower = 'lower'
+ # end
+
+  #if tries < guesses
+    #puts "Too #{low_or_high}, try something #{higher_or_lower}"
+    #if tries_left > 1
+      #puts "You have #{tries_left} tries left"
+    #else
+      #puts "You have #{tries_left} try left"
+    #end
+  #end
+
+#end
 
 
 

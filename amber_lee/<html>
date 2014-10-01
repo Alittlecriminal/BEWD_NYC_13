@@ -1,0 +1,7 @@
+<html>
+<head>
+  <title> BEWD FORKS </title>
+</head>
+<a href='#{fork[url:]}''>
+<img src='#{fork[:avatar_url]}' width='200' height='200' />
+</a>
